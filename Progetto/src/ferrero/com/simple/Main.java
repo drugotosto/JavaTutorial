@@ -16,6 +16,7 @@ class Main {
     Cane dog = new Cane(nome,eta,razza);
 
 		System.out.println("Il cane si chiama ': "+ dog.getNome() +"' di eta: "+ dog.getAnni() +" e di razza: "+ dog.getRazza());
+		dog.makeNoise();
 	}
 	
 }

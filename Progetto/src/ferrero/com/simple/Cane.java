@@ -16,7 +16,7 @@ class Cane extends Animale {
 	}
 
 	public void makeNoise() {
-		System.out.println("Cane sta facendo rumore!");
+		System.out.println("Il cane "+this.getNome() +" sta abbaiando!");
 	}
 
 }
