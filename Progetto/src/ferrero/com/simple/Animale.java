@@ -5,8 +5,11 @@ class Animale {
 	private String nome= "Nome Animale di Default";
 	private int anni=1;
 
+	public Animale(){
+	}
+
 	public Animale (String nome, String eta) {
-		if (!eta.isEmpty() && eta!=null) {
+		if (!nome.isEmpty() && nome!=null) {
 			this.nome=nome;
 		}
 		if (!eta.isEmpty() && eta!=null) {
@@ -35,7 +38,7 @@ class Animale {
 	}
 
 	public void makeNoise() {
-		System.out.print("Animale fa rumore!");
+		System.out.print("Animale fa generico rumore!");
 	}
 
 }

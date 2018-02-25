@@ -13,10 +13,16 @@ class Main {
     System.out.print("Inserisci la razza del cane: ");
     String razza = sc.nextLine();
     
-    Cane dog = new Cane(nome,eta,razza);
+    Cane dog1 = new Cane(nome,eta,razza);
 
-		System.out.println("Il cane si chiama ': "+ dog.getNome() +"' di eta: "+ dog.getAnni() +" e di razza: "+ dog.getRazza());
-		dog.makeNoise();
+		// dog.makeNoise();
+		// dog.makeNoise();
+		System.out.println("La classe dell'oggetto 'dog' è: "+dog1.getClass());
+		System.out.println("L'hashCode è: "+ dog1.hashCode());
+		System.out.println("La stringa di output è: "+ dog1.toString());
+
+		Cane dog2 = new Cane();
+		System.out.println("Il cane dog2 è: "+ dog2.toString());
 	}
 	
 }
