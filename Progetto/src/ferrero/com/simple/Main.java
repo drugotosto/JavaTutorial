@@ -15,14 +15,16 @@ class Main {
     
     Cane dog1 = new Cane(nome,eta,razza);
 
-		// dog.makeNoise();
-		// dog.makeNoise();
-		System.out.println("La classe dell'oggetto 'dog' è: "+dog1.getClass());
-		System.out.println("L'hashCode è: "+ dog1.hashCode());
-		System.out.println("La stringa di output è: "+ dog1.toString());
+		// System.out.println("La classe dell'oggetto 'dog' è: "+dog1.getClass());
+		// System.out.println("L'hashCode è: "+ dog1.hashCode());
+		// System.out.println("La stringa di output è: "+ dog1.toString());
+		// dog1.makeNoise();
 
 		Cane dog2 = new Cane();
 		System.out.println("Il cane dog2 è: "+ dog2.toString());
+
+		Lion leone1 = new Lion();
+		System.out.println(leone1.toString());
 	}
 	
 }

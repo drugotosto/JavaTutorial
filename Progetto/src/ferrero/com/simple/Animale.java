@@ -1,6 +1,6 @@
 package ferrero.com.simple;
 
-class Animale {
+abstract class Animale {
 	
 	private String nome= "Nome Animale di Default";
 	private int anni=1;
@@ -37,8 +37,6 @@ class Animale {
 		System.out.print("Animale sta mangiando!");
 	}
 
-	public void makeNoise() {
-		System.out.print("Animale fa generico rumore!");
-	}
+	public abstract void makeNoise();
 
 }

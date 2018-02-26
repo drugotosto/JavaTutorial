@@ -2,10 +2,9 @@ package ferrero.com.simple;
 
 import java.util.Objects;
 
-class Cane extends Animale {
+class Cane extends Animale implements Pet{
 	
 	private String razza="Razza di Default";
-	
 	
 	public Cane() {
 	}
@@ -29,7 +28,7 @@ class Cane extends Animale {
 	// Override personalizzato del metodo (non statico) "toString()"" della clase "Object" asse "Objects"
 	@Override
 	public String toString() {
-		return "Il cane '"+ getNome() +"' ha "+ getAnni() +" anni  ed è di razza '"+ razza;
+		return "Il cane '"+ getNome() +"' ha "+ getAnni() +" anni  ed è di razza '"+ razza+"'";
 	}
 
 	/*
@@ -51,6 +50,14 @@ class Cane extends Animale {
 	@Override
 	public int hashCode() {
 		return Objects.hash(getNome(),getAnni(), razza);
+	}
+
+	public void beFriendly() {
+		System.out.println("Il Pet in quetione ovvero '"+this.getNome()+"' è un Pet amichevole!");	
+	}
+
+	public void play() {	
+		System.out.println("Il Pet in quetione ovvero '"+this.getNome()+"' sta giocando!");	
 	}
 
 }
