@@ -1,5 +1,11 @@
 package ferrero.com.simple;
 
+import ferrero.com.annotations.*;
+
+@MyClassInfoAnnotation (
+	date="26/02/2018",
+	comment="SuperClasse Astratta per le diverse sottocategorie di Animali"
+)
 abstract class Animale {
 	
 	private String nome= "Nome Animale di Default";
