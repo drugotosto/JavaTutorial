@@ -2,15 +2,20 @@ package ferrero.com.simple;
 
 import java.util.Objects;
 
-class Cane extends Animale implements Pet{
+class Cane extends Animale implements Pet {
 	
-	private String razza="Razza di Default";
+	private String razza;
 	
 	public Cane() {
+		// Viene richiamato il costruttore di Animale che recupera almeno la specie di animale "Cane"
+		super("Cane");
+		razza="Razza di Default";
 	}
 
 	public Cane(String nome, String eta, String razza) {
-		super(nome,eta);
+		// Viene richiamato il costruttore di Animale che recupera tutte le info dell'animale generico più il fatto che sia della specie CANE
+		super(nome,eta,"Cane");
+		System.out.println("Chiamata al costruttore di Cane!");
 		if (!razza.isEmpty() && razza!=null) {
 			this.razza=razza;
 		}
@@ -20,15 +25,14 @@ class Cane extends Animale implements Pet{
 		return this.razza;
 	}
 
-	public void makeNoise() {
-		System.out.println("Il cane "+this.getNome() +" sta abbaiando!");
+	public String makeNoise() {
+		return "abbaia!";
 	}
 
-
-	// Override personalizzato del metodo (non statico) "toString()"" della clase "Object" asse "Objects"
+	// Override personalizzato del metodo (non statico) "toString()"" della clase "Object" 
 	@Override
 	public String toString() {
-		return "Il cane '"+ getNome() +"' ha "+ getAnni() +" anni  ed è di razza '"+ razza+"'";
+		return "Il "+ getSpecie() +" di nome '"+ getNome() +"' ha "+ getAnni() +" anni è di razza '"+ razza+"' e "+ makeNoise();
 	}
 
 	/*
@@ -49,9 +53,10 @@ class Cane extends Animale implements Pet{
 	// Override del metodo (non statico) "hashCode()" della clase "Object" utilizzando il metodo statico "hash()" della classe "Objects"
 	@Override
 	public int hashCode() {
-		return Objects.hash(getNome(),getAnni(), razza);
+		return Objects.hash(getNome(),getAnni(), razza, this.getSpecie());
 	}
 
+	// Implementazione dei metodi che fanno parte dell'interfaccia "Pet"
 	public void beFriendly() {
 		System.out.println("Il Pet in quetione ovvero '"+this.getNome()+"' è un Pet amichevole!");	
 	}

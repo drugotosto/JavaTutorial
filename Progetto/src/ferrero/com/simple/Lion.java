@@ -1,14 +1,20 @@
 package ferrero.com.simple;
 
 public class Lion extends Animale {
-    
-  public void makeNoise() {
-  	System.out.println("Il leone ruggisce!");
+  
+
+  public Lion () {
+		// Viene richiamato il costruttore di Animale che recupera almeno la specie di animale "Leone"
+  	super("Leone");
   }
 
-  @Override
-	public String toString() {
-		return "Il leone '"+ getNome() +"' ha "+ getAnni()+" anni";
+  public Lion(String nome, String eta) {
+		// Viene richiamato il costruttore di Animale che recupera tutte le info dell'animale generico più il fatto che sia della specie "Lion"
+		super(nome,eta,"Leone");
 	}
+
+  public String makeNoise() {
+  	return "ruggisce!";
+  }
 
 }

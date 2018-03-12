@@ -13,7 +13,7 @@ class Main {
     System.out.print("Inserisci la razza del cane: ");
     String razza = sc.nextLine();
     
-    Cane dog1 = new Cane(nome,eta,razza);
+    // Cane dog1 = new Cane(nome,eta,razza);
 
 		// System.out.println("La classe dell'oggetto 'dog' è: "+dog1.getClass());
 		// System.out.println("L'hashCode è: "+ dog1.hashCode());
@@ -21,10 +21,11 @@ class Main {
 		// dog1.makeNoise();
 
 		Cane dog2 = new Cane();
-		System.out.println("Il cane dog2 è: "+ dog2.toString());
+		System.out.println("\nIl cane dog2 è: "+ dog2.toString());
 
-		Lion leone1 = new Lion();
-		System.out.println(leone1.toString());
+
+		Lion leone1 = new Lion("Mufasa","35");
+		System.out.println("\n"+leone1.toString());
 	}
 	
 }

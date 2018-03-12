@@ -8,19 +8,29 @@ import ferrero.com.annotations.*;
 )
 abstract class Animale {
 	
-	private String nome= "Nome Animale di Default";
-	private int anni=1;
+	private String nome;
+	private int anni;
+	private String specie; 
 
-	public Animale(){
+
+	public Animale(String specie) {
+		// Vado a richiamare il costruttore sottostante passando i valori di default per tutti i campi tranne che per la specie
+		this("Nome Animale di Default","1", specie);	
 	}
 
-	public Animale (String nome, String eta) {
+	/*
+		Costruttore che implementa il "vero lavoro" di tutta la classe (richiamato da tutti gli altri costruttori)
+		quando occorre instanziare i nuovi oggetti
+	*/
+	public Animale (String nome, String eta, String specie) {
+		System.out.println("Chiamata al costruttore di Animale!");
 		if (!nome.isEmpty() && nome!=null) {
 			this.nome=nome;
 		}
 		if (!eta.isEmpty() && eta!=null) {
 			this.anni=Integer.parseInt(eta);
 		}
+		this.specie=specie;
 	}
 
 	public String getNome() {
@@ -39,10 +49,24 @@ abstract class Animale {
 		this.anni=anni;
 	}
 
+	public String getSpecie() {
+		return this.specie;
+	}
+
+	public void setSpecie(String specie) {
+		this.specie=specie;
+	}
+
+	// Override personalizzato del metodo (non statico) "toString()"" della clase "Object" asse "Objects"
+	@Override
+	public String toString() {
+		return "Il "+ getSpecie() +" '"+ getNome() +"' ha "+ getAnni() +" anni e "+ makeNoise();
+	}
+
 	public void eat() {
 		System.out.print("Animale sta mangiando!");
 	}
 
-	public abstract void makeNoise();
+	public abstract String makeNoise();
 
 }
