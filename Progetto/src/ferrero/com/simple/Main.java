@@ -6,6 +6,9 @@ import java.util.Arrays;
 
 public class Main {
 	public static void main(String[] args) {
+
+		System.out.println("Prove generali per applicare i concetti base di Java");
+		
 		Scanner sc= new Scanner(System.in);
 	  
     System.out.print("Inserisci il nome del cane: ");
@@ -37,6 +40,7 @@ public class Main {
 		// Aggiunta di un cane allo Zoo
 		zoo.addAnimale(dog2);
 		System.out.println("Lo zoo è formato da: "+ zoo.getAnimali());
+
 	}
 
 }
