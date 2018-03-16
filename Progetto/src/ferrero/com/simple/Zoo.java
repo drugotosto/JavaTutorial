@@ -1,10 +1,12 @@
 package ferrero.com.simple;
 
+import ferrero.com.annotations.*;
+
 import java.util.List;
-/*
-	Classe che implementa il SINGLETON PATTERN.
-	Tramite l'utilizzo combinato delle parole chiave "static", "private" viene definita una classe che permette la creazione di una sola istanza/oggetto "Zoo" per l'intera applicazione e che attraverso gli altri metodi non statici permette di implementare la logica della sudetta classe.
-*/
+@MyClassInfoAnnotation(
+	date="13/03/2018",
+	comment="	Classe che implementa il SINGLETON PATTERN. Tramite l'utilizzo combinato delle parole chiave 'static' e 'private' viene definita una classe che permette la creazione di una sola istanza/oggetto 'Zoo' per l'intera applicazione e che attraverso gli altri metodi non statici permette di implementare la logica della sudetta classe"
+)
 public class Zoo {
 	
 	private static Zoo instance = new Zoo();
