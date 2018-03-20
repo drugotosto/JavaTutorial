@@ -6,13 +6,20 @@ import java.io.*;
 public class Jukebox1 {
 		
 		// campo che contiene la lista delle canzoni recuperate da file
-		ArrayList<String> songList = new ArrayList<String>();
+		ArrayList<Song> songList = new ArrayList<Song>();
   
   public static void main(String[] args) {
 		new Jukebox1().go();
 	}	public void go() {
 		getSongs();
 		System.out.println("La lista di canzoni recuperate è: "+ songList);
+		// L'ordinamento fatto da Collections.sort(...) sfrutta il metodo "compareTo(...)" presente all'interno dell'interfaccia "Comparable" implementata dalla classe "Song"
+		Collections.sort(songList);
+		System.out.println("La lista di canzoni ordinata per titolo è: "+ songList);
+		// L'ordinamento fatto da Collections.sort(...) sfrutta il metodo "compare(...)" definito dalla classe "ArtistComparator" che implementa l'interfaccia "Comparator"
+		Collections.sort(songList,new ArtistComparator());
+		System.out.println("La lista di canzoni ordinata per artista è: "+ songList);
+
 	}
 
 	// Si è deciso si fare il "duck" della possibile eccezione lanciata da 'readLine()'
@@ -31,6 +38,6 @@ public class Jukebox1 {
 
 	public void addSongs(String lineToParse) {
 		String[] tokens =lineToParse.split("/");
-		songList.add(tokens[1]);
+		songList.add(new Song(tokens));
 	}
 }
