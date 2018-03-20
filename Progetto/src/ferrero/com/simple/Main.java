@@ -3,6 +3,7 @@ package ferrero.com.simple;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Main {
 	public static void main(String[] args) {
@@ -39,7 +40,22 @@ public class Main {
 		System.out.println("Lo zoo è formato da: "+ zoo.getAnimali());
 		// Aggiunta di un cane allo Zoo
 		zoo.addAnimale(dog2);
-		System.out.println("Lo zoo è formato da: "+ zoo.getAnimali());
+		System.out.println("Lo zoo dopo l'aggiunta di un'altro cane è formato da: "+ zoo.getAnimali());
+
+		System.out.println("\nOrdino 'zoo' per età");
+		System.out.println("Lo zoo è formato da: "+ zoo.sortAnimalByAge());
+		System.out.println("\nOrdino 'zoo' per nome");
+		System.out.println("Lo zoo è formato da: "+ zoo.sortAnimalByName());
+
+		// Eseguo ordinamento di una lista di soli Cani sfruttando il "Comparator" definito all'interno della classe Animale
+		System.out.println("\nOrdino la lista formata da soli cani per nome!");
+		ArrayList<Cane> listaCani = new ArrayList<>(Arrays.asList(dog1,dog2,new Cane("paronzo","26","dogo")));
+		Collections.sort(listaCani, Animale.nameComparator);
+		System.out.println("La lista dei cani ordinata per nomi convertita in Array è: ");
+		for(Cane dog: listaCani.toArray(new Cane[listaCani.size()])) {
+			System.out.println("Il cane è: "+ dog);
+		}
+
 
 	}
 
