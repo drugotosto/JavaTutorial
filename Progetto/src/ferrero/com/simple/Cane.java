@@ -38,19 +38,21 @@ class Cane extends Animale implements Pet {
 	/*
 		In generale per confrontare due oggetti di una data classe è buona norma fare l'override dei metodi "equals" e "hashCode" della classe "Object"
 	*/
-	// Override del metodo (non statico) "equals()"" della clase "Object" utilizzando il metodo statico "equals()" della classe "Objects"
+	// Override del metodo (non statico) "equals()"" della clase "Object" utilizzando il metodo statico "equals()" della utility class "Objects"
 	@Override
 	public boolean equals(Object o) {
 
+		// Controllo se le due variabili puntano allo stesso oggetto sulla HEAP (concetto di uguaglianza standard)
 		if (o==this) return true;
 
+		// Ridefinisco il concetto di uguaglianza tra "Cani"
 		Cane caneInput= (Cane) o;
 		return getAnni()== caneInput.getAnni() &&
 						Objects.equals(getNome(), caneInput.getNome()) &&
 						Objects.equals(getRazza(), caneInput.getRazza());
 	}
 
-	// Override del metodo (non statico) "hashCode()" della clase "Object" utilizzando il metodo statico "hash()" della classe "Objects"
+	// Override del metodo (non statico) "hashCode()" della clase "Object" utilizzando il metodo statico "hash()" della utility class "Objects"
 	@Override
 	public int hashCode() {
 		return Objects.hash(getNome(),getAnni(), razza, this.getSpecie());
